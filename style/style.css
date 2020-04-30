@@ -80,8 +80,8 @@ header{
 */
 
 .slidershow{
-    width: 100%;
-    height: 50vh;
+    width: 100vw;
+    height: 28vw;
     padding-top: 10vh;
     overflow: hidden;
     position: relative;
@@ -299,6 +299,8 @@ footer{
         margin-left: auto;
         margin-right: auto;
     }
-
+    .slidershow{
+        height: 35vw;
+    }
 
 }
