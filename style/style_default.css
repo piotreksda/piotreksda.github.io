@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-color: #24252A;
+    font-family: 'Montserrat';
+
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+}
+/*
+    Nawigacja
+*/
+.nav_lnk li,.nav_link,.con button{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+header{
+    height: 10vh;
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background: linear-gradient(180deg, #1d1d21, #24252A);
+}
+.logo{
+    cursor: pointer;
+}
+.nav_lnk{
+    list-style: none;
+}
+.nav_lnk li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_lnk li:first-child{
+    padding-left: 0;
+}
+.nav_lnk li:last-child{
+    padding-right: 0;
+}
+
+.nav_lnk li a{
+    transition: all 0.3s ease 0s;
+}
+.nav_lnk li a:hover{
+    color: #0088a9;
+}
+
+.con button{
+    width: 150px;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    outline: none;
+}
+.con button:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+footer{
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    z-index: 9999;
+    color:white;
+    font-size: 3vh;
+    background: linear-gradient(360deg, #1d1d21, #24252A);
+    text-align: center;
+    vertical-align: bottom;
+    padding: 1vh;
+}
+::-webkit-scrollbar{
+    width: 15px;
+
+}
+::-webkit-scrollbar-track{
+    border: 7px solid #24252A;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #aa4b6b
+    ,#6b6b83
+    ,#3b8d99);
+    border-radius: 3px;
+
+}
+
+@media (max-width: 1000px){
+    .aboutMe, .myphoto{
+        clear: both;
+        width: 100%;
+    }
+    .myphoto img{
+        height: 100%;
+        float: none;
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slidershow{
+        height: 45vw;
+    }
+}
