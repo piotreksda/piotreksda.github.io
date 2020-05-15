@@ -28,7 +28,6 @@ $headers = "MIME-Version: 1.0";
 $headers .= "Content-type: text/html; charset=iso-8859-1";
 $headers .= "From: $myemail\n";
 $headers .= "Reply-To: $email_address";
-$headers .= "Content-type: text/html\r\n";
 mail($to,$email_subject,$email_body,$headers);
 //redirect to the 'thank you' page
 header('Location: /');
