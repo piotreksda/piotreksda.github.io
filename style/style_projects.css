@@ -1,0 +1,23 @@
+.contentWrapper{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.project{
+    width: 500px;
+    height: 450px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 136, 169, 1);
+    margin: 50px;
+    overflow: hidden;
+    padding: 10px;
+    color: white;
+
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,117,145,1);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,117,145,1);
+    box-shadow: 0 0 15px 0 rgba(0,117,145,1);
+}
