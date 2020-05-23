@@ -18,10 +18,19 @@
     padding: 10px;
     color: white;
     position: relative;
+    transition: all 0.5s ease;
 
     -webkit-box-shadow: 0 0 15px 0 rgba(0,117,145,1);
     -moz-box-shadow: 0 0 15px 0 rgba(0,117,145,1);
     box-shadow: 0 0 15px 0 rgba(0,117,145,1);
+}
+.project:hover{
+    transform: scale(1.1);
+    border: 2px solid rgba(0, 156, 194, 1);
+
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 176, 219,1);
+    -moz-box-shadow: 0 0 15px 0 rgba(0, 176, 219,1);
+    box-shadow: 0 0 15px 0 rgba(0, 176, 219,1);
 }
 .clip{
     -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
