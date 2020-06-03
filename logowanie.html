@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/style_default.css">
+    <link rel="stylesheet" href="style/style_login.css">
+
+
+
+    <SCRIPT LANGUAGE= "JavaScript" type= "text/javascript">
+        //Ukrycie przed przeglądarkami nie obsługującymi JavaScriptów
+        var users = new Array("user1", "user2", "user3");
+        var passwords = new Array("kod1", "kod2", "kod3");
+        function getCookie(name)
+        {
+            var c = document.cookie;
+            point = c.indexOf(name);
+            if (point != -1){
+                endAt = c.indexOf (";", point + name.length);
+                if (endAt == -1) endAt = c.length;
+                var temp = c.substring(point + 1 + name.length, endAt);
+                return temp;
+            }
+            return false;
+        }
+        function setCookie(name, value)
+        {
+            data = new Date();
+            data.setMonth(data.getMonth() + 1);
+            var cookie = name + "=" + value + ";";
+            cookie += "expires=" + data.toGMTString();
+            document.cookie = cookie;
+        }
+        function sprawdz_haslo(user, pass)
+        {
+            for(var i = 0; i < users.length; i++){
+                if((user == users[i]) && (pass == passwords[i]))
+                    return true;
+            }
+            return false;
+        }
+        function check()
+        {
+            var user = document.form1.user.value;
+            var pass = document.form1.pass.value;
+            if(!sprawdz_haslo(user, pass)){
+                alert('Niepoprawne hasło!');
+            }
+            else{
+                if(document.form1.autoLogin.checked){
+                    setCookie("autoLogin", "true");
+                }
+                document.location.href = "wejdz.html";
+            }
+        }
+        function checkAutoLogin()
+        {
+            if(getCookie("autoLogin") == "true"){
+                document.location.href = "wejdz.html";
+            }
+        }
+        // Koniec kodu JavaScript -->
+    </SCRIPT>
+
+
+</head>
+<body onLoad="checkAutoLogin();">
+<div class="wrapper">
+    <header>
+        <a href="http://www.piotrusjestem.me">
+            <img class= "logo" src="images/logo.svg" height="37px" width="150px" alt="logo">
+        </a>
+        <nav>
+            <ul class="nav_lnk">
+                <li><a href="game.html" class="nav_link">Gra</a></li>
+                <li><a href="gallery.html" class="nav_link">Galeria</a></li>
+                <li><a href="projects.html" class="nav_link">Projekty</a></li>
+            </ul>
+        </nav>
+        <a class= "con" href= "kontakt.html"><button>Kontakt</button></a>
+    </header>
+
+<div class="form">
+    <form action="" name="form1">
+        <input type="text" name="user" placeholder="user name" onfocus="this.placeholder=''" onblur="this.placeholder='user name'"><br />
+        <input type="password" name="pass" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'"> <br /><br />
+        <input type="checkbox" name="autoLogin"> Zapamiętaj mnie! <br /><br />
+        <input type="button" value="Wejdź" onClick="check();">
+    </form>
+</div>
+
+
+</div>
+</body>
+</html>
