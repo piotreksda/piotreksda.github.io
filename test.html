@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Piotrusjestem - test</title>
+
+    <link rel="stylesheet" href="style/style_default.css">
+    <link rel="stylesheet" href="style/style_test.css">
+
+    <script LANGUAGE="JavaScript1.3"><!--
+        var numPyt =20;
+        var numWyb = 2;
+        var odpowiedz = new Array(20);
+        var odpowiedz = new Array('a','a','a','a','b','a','a','a','b','b','a','b','b','a','b','b','a','b','b','b');
+                                 //1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
+        function zobaczWynik(form){
+        var score = 0;
+        var currElt;
+        var currSelection;
+        for (i=0; i<numPyt; i++) {
+        currElt = i*numWyb;
+        for (j=0; j<numWyb; j++) {
+        currSelection = form.elements[currElt + j];
+        if (currSelection.checked) {
+        if (currSelection.value == odpowiedz[i]) {
+        score++;
+        break;
+        }
+        }
+        }
+        }
+        score = Math.round(score/numPyt*100);
+        form.percentage.value = score + "%";
+        var correctodpowiedz = "";
+        for (i=1; i<=numPyt; i++) {
+        correctodpowiedz += i + ". " + odpowiedz[i-1] + "\r\n";
+        }
+        form.wyniki.value = correctodpowiedz;
+            if ((score<=100)&&(score>=90)) {alert("Ocena:Celuj�cy Gratuluje")};
+            if ((score<=89)&&(score>=75)) {alert("Ocena:Bardzo Dobry Super")};
+            if ((score<=74)&&(score>=50)) {alert("Ocena Dobry Mogło być lepiej!")} ;
+            if ((score<=49)&&(score>=40)) {alert("ocena:Dostateczny Słabo")};
+            if ((score<=39)&&(score>=30)) {alert("Ocena: Dopuszczaj�cy Czy wiesz ze zaznaczaj�c cały cas t� sam� odp miałbyc 3??")};
+            if ((form.wyniki.value)<=29) {alert("Ocena:LACZ Nie bede tego komentował")};
+        }
+</script>
+
+</head>
+<body>
+
+<header>
+    <a href="http://www.piotrusjestem.me">
+        <img class= "logo" src="images/logo.svg" height="37px" width="150px" alt="logo">
+    </a>
+    <nav>
+        <ul class="nav_lnk">
+            <li><a href="game.html" class="nav_link">Gra</a></li>
+            <li><a href="gallery.html" class="nav_link">Galeria</a></li>
+            <li><a href="projects.html" class="nav_link">Projekty</a></li>
+        </ul>
+    </nav>
+    <a class= "con" href= "kontakt.html"><button>Kontakt</button></a>
+</header>
+
+<div class="contentWrapper">
+<form name="quiz">
+    <div class="odp">//1
+        <P><B>Czy c++ został stworzony z myślą o porgramowaniu obiektowym</B><br/><br/>
+
+        <input type=radio name="1" value="a">Nie<br/>
+        <input type=radio name="1" value="b">Tak</P>
+    </div>
+    <div class="odp">//2
+        <P><B>Aby pobrać ciąg znaków z klawiatury do programu w języku c++ zadziała:</B><br/><br/>
+
+        <input type=radio name="2" value="a">cin >> zmienna;<br/>
+        <input type=radio name="2" value="b">cin << zmienna;</P>
+    </div>
+    <div class="odp">//3
+        <P><B>Co się stanie po wykonaniu tej lini kodu w html5<br/><br/>&lt;p&gt;Przykładowy tekst &lt;p/&gt;</B><br/><br/>
+
+        <input type=radio name="3" value="a">Stworzy się akapit<BR>
+        <input type=radio name="3" value="b">Stworzy się lista</P>
+    </div>
+    <div class="odp">//4
+        <P><B>Z jakiego to języka programowania?</B><br/><br/>
+            <img src="images/pytania/Pytanie1.jpg" alt=""> <br/>
+        <input type=radio name="4" value="a">Java Script<br/>
+        <input type=radio name="4" value="b">C#</P>
+    </div>
+    <div class="odp">//5
+        <P><B>Kto dostanie ocene celująca z tego zadania</B><br/><br/>
+
+        <input type=radio name="5" value="a">Ktoś inny <br/>
+        <input type=radio name="5" value="b">Piotrek Bartczak</P>
+    </div>
+    <div class="odp">//6
+        <P><B>Linuks i windows to to samo </B><br/><br/>
+
+        <input type=radio name="6" value="a">Nie<br/>
+        <input type=radio name="6" value="b">Tak</P>
+    </div>
+    <div class="odp">//7
+        <P><B>Polecenie "ipconfig" w cmd wyświetli takie dane jak; brama domyślna, adress ip komputera, numer telefonu do ładnej kobiety </B><br/><br/>
+
+        <input type=radio name="7" value="a">Nie<br/>
+        <input type=radio name="7" value="b">Tak</P>
+    </div>
+    <div class="odp">//8
+        <P><B>(windows)W cmd znak '?' działa tak samo jak polecenie help</B><br/><br/>
+
+        <input type=radio name="8" value="a">Nie<br/>
+        <input type=radio name="8" value="b">Tak</P>
+    </div>
+    <div class="odp">//9
+        <P><B>Console.writeline w C# pokaże w konsoli linie i kolejne polecenia będą wykonywać się od nowej lini</B><br/><br/>
+
+        <input type=radio name="9" value="a">Nie<br/>
+        <input type=radio name="9" value="b">Tak</P>
+    </div>
+    <div class="odp">//10
+        <P><B>Poprawny zapis w c++ aby zdeklarować tablice to:</B><br/><br/>
+
+        <input type=radio name="10" value="a">char[x] nazwa;<br/>
+        <input type=radio name="10" value="b">char nazwa[x]</P>
+    </div>
+    <div class="odp">//11
+        <P><B>CSS służy do nadawania stronie wyglądu</B><br/><br/>
+
+        <input type=radio name="11" value="a">Tak<br/>
+        <input type=radio name="11" value="b">Nie</P>
+    </div>
+    <div class="odp">//12
+        <P><B>Do{...}while(...) najpierw się wykona a potem sprawdzi warunek </B><br/><br/>
+
+        <input type=radio name="12" value="a">Nie<br/>
+        <input type=radio name="12" value="b">Tak</P>
+    </div>
+    <div class="odp">//13
+        <P><B>C# jest językiem obiektowym</B><br/><br/>
+
+        <input type=radio name="13" value="a">Nie<br/>
+        <input type=radio name="13" value="b">Tak</P>
+    </div>
+    <div class="odp">//14
+        <P><B>Czy w notatniku możesz napisać program i go skompilować</B><br/><br/>
+
+        <input type=radio name="14" value="a">Nie<BR>
+        <input type=radio name="14" value="b">Tak</P>
+    </div>
+    <div class="odp">//15
+        <P><B>int w c++ ma minimum x bitów</B><br/><br/>
+
+        <input type=radio name="15" value="a">x=8<BR>
+        <input type=radio name="15" value="b">x=16</P>
+    </div>
+    <div class="odp">//16
+        <P><B>long w c++ odpowiada za liczby całkowite</B><br/><br/>
+
+        <input type=radio name="16" value="a">Nie<br/>
+        <input type=radio name="16" value="b">Tak</P>
+    </div>
+    <div class="odp">//17
+        <P><B>Math.pow(x,y) co oznacza x i y</B><br/><br/>
+
+        <input type=radio name="17" value="a">x - liczba, y - potęga do której ma być podniesiony x<br/>
+        <input type=radio name="17" value="b">x - liczba, y - mnożnik x'sa</P>
+    </div>
+    <div class="odp">//18
+        <P><B>18. Czy w code-blocks można używać skrótu ctrl+z?</B><br/><br/>
+
+        <input type=radio name="18" value="a">Nie<br/>
+        <input type=radio name="18" value="b">Tak</P>
+    </div>
+    <div class="odp">//19
+        <P><B>Czy można napisać program który blokuje spam w mailach</B><br/><br/>
+
+        <input type=radio name="19" value="a">Nie<br/>
+        <input type=radio name="19" value="b">Tak</P>
+    </div>
+    <div class="odp">//20
+        <P><B>Czy da się nauczyć programowania</B><br/><br/>
+
+        <input type=radio name="20" value="a">Nie<br/>
+        <input type=radio name="20" value="b">Tak</P>
+    </div>
+
+
+    <P align="center">
+
+        <INPUT TYPE="button"  VALUE="Zobacz wynik" ONCLICK="zobaczWynik(this.form)">
+
+        <br/><br/>
+
+        <INPUT TYPE="reset"  VALUE="Wyczysc odpowiedzi">
+
+        <br/><br/>
+
+    </P>
+
+    <hr size=1 color="black">
+        <br/><br/>
+    <P>Twoj wynik: <INPUT TYPE="text" SIZE="7" NAME="percentage"></P>
+</form>
+</div>
+<footer>
+    <span style="opacity: 0.8;">&copy; 2020 Copyright: </span><span>Piotr Bartczak</span>
+</footer>
+</body>
+
+
+
+
+</body>
+</html>
